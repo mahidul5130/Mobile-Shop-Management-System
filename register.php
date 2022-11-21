@@ -8,6 +8,27 @@ if (isset($_SESSION['USER_LOGIN']) && $_SESSION['USER_LOGIN'] == 'yes') {
 <?php
 }
 ?>
+
+<!-- Start Bradcaump area -->
+<div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(images/bg/4.jpg) no-repeat scroll center center / cover ;">
+	<div class="ht__bradcaump__wrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="bradcaump__inner">
+						<nav class="bradcaump-inner">
+							<a class="breadcrumb-item" href="index.php">Home</a>
+							<span class="brd-separetor"><i class="zmdi zmdi-chevron-right"></i></span>
+							<span class="breadcrumb-item active">Register</span>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Bradcaump area -->
+
 <!-- Start Contact Area -->
 <section class="htc__contact__area ptb--100 bg__white">
 	<div class="container">
@@ -78,6 +99,15 @@ if (isset($_SESSION['USER_LOGIN']) && $_SESSION['USER_LOGIN'] == 'yes') {
 					</div>
 				</div>
 
+			</div>
+
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+			<div class="col-md-6">
+				<div>
+					<h2>Already have an account?</h2><br>
+					<a href="login.php"><button type="button" class="fv-btn">Login</button></a>
+				</div>
 			</div>
 
 		</div>
