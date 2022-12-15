@@ -90,7 +90,7 @@ if (isset($_SESSION['USER_LOGIN']) && $_SESSION['USER_LOGIN'] == 'yes') {
 							</div>
 
 							<div class="contact-btn">
-								<button type="button" class="fv-btn" onclick="user_register()" disabled id="btn_register">Register</button>
+								<a href = "login_after_registration.php"><button type="button" class="fv-btn" onclick="user_register()" disabled id="btn_register">Register</button></a>
 							</div>
 						</form>
 						<div class="form-output register_msg">

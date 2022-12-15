@@ -70,10 +70,10 @@ $res=mysqli_query($con,"select product.name,product.image,product_attributes.pri
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                     <div class="buttons-cart--inner">
                                         <div class="buttons-cart">
-                                            <a href="<?php echo SITE_PATH?>">Continue Shopping</a>
+                                            <a href="index.php">Continue Shopping</a>
                                         </div>
                                         <div class="buttons-cart checkout--btn">
-                                            <a href="<?php echo SITE_PATH?>checkout.php">checkout</a>
+                                            <a href="checkout.php">checkout</a>
                                         </div>
                                     </div>
                                 </div>

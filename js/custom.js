@@ -140,7 +140,7 @@ function manage_cart(pid,type,is_checkout){
 				}else{
 					jQuery('.htc__qua').html(result);
 					if(is_checkout=='yes'){
-						window.location.href='checkout.php';
+						window.location.href='checkout';
 					}
 				}
 			}	

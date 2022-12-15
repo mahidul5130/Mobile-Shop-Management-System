@@ -206,8 +206,7 @@ if($mypage=='product.php'){
 											</nav>
 											<?php
 										}else{
-											echo '<a href="login.php" class="mr15">Login</a>';
-											echo '<a href="register.php" class="mr15">Register</a>';
+											echo '<a href="login.php" class="mr15">Login/Register</a>';
 										}
 										?>
 									
