@@ -3,7 +3,7 @@ require('connection.inc.php');
 require('functions.inc.php');
 require('add_to_cart.inc.php');
 $wishlist_count=0;
-$cat_res=mysqli_query($con,"select * from categories where status=1 order by categories asc");
+$cat_res=mysqli_query($con,"select * from categories where status=1 order by id asc");
 $cat_arr=array();
 while($row=mysqli_fetch_assoc($cat_res)){
 	$cat_arr[]=$row;	
@@ -28,11 +28,11 @@ $script_name=$_SERVER['SCRIPT_NAME'];
 $script_name_arr=explode('/',$script_name);
 $mypage=$script_name_arr[count($script_name_arr)-1];
 
-$meta_title="My Ecom Website";
-$meta_desc="My Ecom Website";
-$meta_keyword="My Ecom Website";
+$meta_title="SHOPAHOLIC Mobile Store";
+$meta_desc="SHOPAHOLIC Mobile Store";
+$meta_keyword="SHOPAHOLIC Mobile Store";
 $meta_url=SITE_PATH;
-$meta_image="";
+$meta_image=SITE_PATH."/images/logo/4.png";
 if($mypage=='product.php'){
 	$product_id=get_safe_value($con,$_GET['id']);
 	$product_meta=mysqli_fetch_assoc(mysqli_query($con,"select * from product where id='$product_id'"));
@@ -101,7 +101,7 @@ if($mypage=='product.php'){
                         <div class="menumenu__container clearfix">
                             <div class="col-lg-2 col-md-2 col-sm-3 col-xs-5"> 
                                 <div class="logo">
-                                     <a href="index.php"><img src="images/logo/4.png" alt="logo images"></a>
+                                     <a href="index.php"><img src="images/logo/4.png" alt="logo images" height="80" width="149"></a>
                                 </div>
                             </div>
                             <div class="col-md-7 col-lg-6 col-sm-5 col-xs-3">

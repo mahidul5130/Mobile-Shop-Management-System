@@ -299,9 +299,9 @@ if(mysqli_num_rows($lastOrderDetailsRes)>0){
 								
 								foreach($val as $key1=>$val1){
 									
-$resAttr=mysqli_fetch_assoc(mysqli_query($con,"select product_attributes.*,color_master.color,size_master.size from product_attributes 
+$resAttr=mysqli_fetch_assoc(mysqli_query($con,"select product_attributes.*,color_master.color,rom_master.size from product_attributes 
 	left join color_master on product_attributes.color_id=color_master.id and color_master.status=1 
-	left join size_master on product_attributes.size_id=size_master.id and size_master.status=1
+	left join rom_master on product_attributes.size_id=rom_master.id and rom_master.status=1
 	where product_attributes.id='$key1'"));						
 $productArr=get_product($con,'','',$key,'','','','',$key1);
 $pname=$productArr[0]['name'];

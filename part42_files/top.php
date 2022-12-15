@@ -28,11 +28,11 @@ $script_name=$_SERVER['SCRIPT_NAME'];
 $script_name_arr=explode('/',$script_name);
 $mypage=$script_name_arr[count($script_name_arr)-1];
 
-$meta_title="My Ecom Website";
-$meta_desc="My Ecom Website";
-$meta_keyword="My Ecom Website";
+$meta_title="SHOPAHOLIC Mobile Store";
+$meta_desc="SHOPAHOLIC Mobile Store";
+$meta_keyword="SHOPAHOLIC Mobile Store";
 $meta_url=SITE_PATH;
-$meta_image="";
+$meta_image=SITE_PATH."/images/logo/4.png";
 if($mypage=='product.php'){
 	$product_id=get_safe_value($con,$_GET['id']);
 	$product_meta=mysqli_fetch_assoc(mysqli_query($con,"select * from product where id='$product_id'"));

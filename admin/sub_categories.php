@@ -23,7 +23,7 @@ if(isset($_GET['type']) && $_GET['type']!=''){
 	}
 }
 
-$sql="select sub_categories.*,categories.categories from sub_categories,categories where categories.id=sub_categories.categories_id order by sub_categories.sub_categories asc";
+$sql="select sub_categories.*,categories.categories from sub_categories,categories where categories.id=sub_categories.categories_id order by sub_categories.id asc";
 $res=mysqli_query($con,$sql);
 ?>
 <div class="content pb-0">

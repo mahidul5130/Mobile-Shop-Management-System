@@ -11,18 +11,18 @@ if(isset($_GET['type']) && $_GET['type']!=''){
 		}else{
 			$status='0';
 		}
-		$update_status_sql="update size_master set status='$status' where id='$id'";
+		$update_status_sql="update rom_master set status='$status' where id='$id'";
 		mysqli_query($con,$update_status_sql);
 	}
 	
 	if($type=='delete'){
 		$id=get_safe_value($con,$_GET['id']);
-		$delete_sql="delete from size_master where id='$id'";
+		$delete_sql="delete from rom_master where id='$id'";
 		mysqli_query($con,$delete_sql);
 	}
 }
 
-$sql="select * from size_master order by size asc";
+$sql="select * from rom_master order by id asc";
 $res=mysqli_query($con,$sql);
 ?>
 <div class="content pb-0">
@@ -31,8 +31,8 @@ $res=mysqli_query($con,$sql);
 		  <div class="col-xl-12">
 			 <div class="card">
 				<div class="card-body">
-				   <h4 class="box-title">Size </h4>
-				   <h4 class="box-link"><a href="manage_size.php">Add Size</a> </h4>
+				   <h4 class="box-title">Rom Size </h4>
+				   <h4 class="box-link"><a href="manage_rom.php">Add Size</a> </h4>
 				</div>
 				<div class="card-body--">
 				   <div class="table-stats order-table ov-h">
@@ -62,7 +62,7 @@ $res=mysqli_query($con,$sql);
 								}else{
 									echo "<span class='badge badge-pending'><a href='?type=status&operation=active&id=".$row['id']."'>Deactive</a></span>&nbsp;";
 								}
-								echo "<span class='badge badge-edit'><a href='manage_size.php?id=".$row['id']."'>Edit</a></span>&nbsp;";
+								echo "<span class='badge badge-edit'><a href='manage_rom.php?id=".$row['id']."'>Edit</a></span>&nbsp;";
 								
 								echo "<span class='badge badge-delete'><a href='?type=delete&id=".$row['id']."'>Delete</a></span>";
 								

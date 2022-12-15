@@ -43,7 +43,7 @@ isAdmin();
 									<td class="product-name"><?php echo $row['order_status_str']?></td>
 									<td class="product-name">
 									<?php 
-									echo "Order Id:- ".$row['ship_order_id'].'<br/>';
+									echo "Order Id:- ".$row['id'].'<br/>';
 									echo "Shipment Id:- ".$row['ship_shipment_id'];
 									
 									?></td>

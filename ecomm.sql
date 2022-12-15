@@ -383,10 +383,10 @@ INSERT INTO `shiprocket_token` (`id`, `token`, `added_on`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `size_master`
+-- Table structure for table `rom_master`
 --
 
-CREATE TABLE `size_master` (
+CREATE TABLE `rom_master` (
   `id` int(11) NOT NULL,
   `size` varchar(255) NOT NULL,
   `status` tinyint(4) NOT NULL,
@@ -394,10 +394,10 @@ CREATE TABLE `size_master` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `size_master`
+-- Dumping data for table `rom_master`
 --
 
-INSERT INTO `size_master` (`id`, `size`, `status`, `order_by`) VALUES
+INSERT INTO `rom_master` (`id`, `size`, `status`, `order_by`) VALUES
 (1, 'X', 1, 3),
 (2, 'XL', 1, 4),
 (4, 'M', 1, 2),
@@ -559,9 +559,9 @@ ALTER TABLE `shiprocket_token`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `size_master`
+-- Indexes for table `rom_master`
 --
-ALTER TABLE `size_master`
+ALTER TABLE `rom_master`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -671,9 +671,9 @@ ALTER TABLE `shiprocket_token`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `size_master`
+-- AUTO_INCREMENT for table `rom_master`
 --
-ALTER TABLE `size_master`
+ALTER TABLE `rom_master`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --

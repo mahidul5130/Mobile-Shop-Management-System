@@ -63,7 +63,8 @@ if(isset($_GET['id']) && $_GET['id']!=''){
 		}
 		
 	}else{
-		header('location:product.php');
+		// header('location:product.php');
+		echo "<script>window.location.href='product.php';</script>";
 		die();
 	}
 }
@@ -172,7 +173,8 @@ if(isset($_POST['submit'])){
 		/*Product Multiple Images End*/
 		
 		
-		header('location:product.php');
+		// header('location:product.php');
+		echo "<script>window.location.href='product.php';</script>";
 		die();
 	}
 }

@@ -62,7 +62,7 @@ $html='<div class="wishlist-table table-responsive">
 			</tr>';
 		}
 		 
-		 $total_price=$total_price-$coupon_value;
+		 $total_price=$total_price-(int)$coupon_value;
 		 $html.='<tr>
 				<td colspan="3"></td>
 				<td class="product-name">Total Price</td>

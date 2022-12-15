@@ -34,7 +34,8 @@ if(isset($_POST['review_submit'])){
 	
 	$added_on=date('Y-m-d h:i:s');
 	mysqli_query($con,"insert into product_review(product_id,user_id,rating,review,status,added_on) values('$product_id','".$_SESSION['USER_ID']."','$rating','$review','1','$added_on')");
-	header('location:product.php?id='.$product_id);
+	// header('location:product.php?id='.$product_id);
+	echo "<script>window.location.href='product.php';</script>";
 	die();
 }
 

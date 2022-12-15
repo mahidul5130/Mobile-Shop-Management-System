@@ -102,8 +102,8 @@ function manage_cart_update(pid,type,size_id,color_id){
 	jQuery('#sid').val(size_id);
 	manage_cart(pid,type);
 }
-
-function manage_cart(pid,type,is_checkout){
+// function manage_cart(pid,type,is_checkout)
+function manage_cart(pid,type){
 	var is_error='';
 	if(type=='update'){
 		var qty=jQuery("#"+pid+"qty").val();
@@ -139,9 +139,9 @@ function manage_cart(pid,type,is_checkout){
 					alert('Qty not avaliable');	
 				}else{
 					jQuery('.htc__qua').html(result);
-					if(is_checkout=='yes'){
-						window.location.href='checkout';
-					}
+					// if(is_checkout=='yes'){
+					// 	window.location.href='checkout.php';
+					// }
 				}
 			}	
 		});	

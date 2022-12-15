@@ -11,11 +11,20 @@ if(isset($_SESSION['COUPON_ID'])){
 	unset($_SESSION['COUPON_CODE']);
 	unset($_SESSION['COUPON_VALUE']);
 }
+// foreach($_SESSION['cart'] as $key=>$val){
+// 	$productArr=get_product($con,'','',$key);
+// 	$price=$productArr[0]['price'];
+// 	$qty=$val[0]['qty'];
+// 	$cart_total=$cart_total+($price*$qty);
+// }
 foreach($_SESSION['cart'] as $key=>$val){
-	$productArr=get_product($con,'','',$key);
-	$price=$productArr[0]['price'];
-	$qty=$val['qty'];
-	$cart_total=$cart_total+($price*$qty);
+	foreach($val as $key1=>$val1)	{
+		$resAttr=mysqli_fetch_assoc(mysqli_query($con,"select price from product_attributes where id='$key1'"));
+		$price=$resAttr['price'];
+		$qty=$val1['qty'];
+		$cart_total=$cart_total+($price*$qty);
+		
+	}
 }
 if($count>0){
 	$coupon_details=mysqli_fetch_assoc($res);

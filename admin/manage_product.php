@@ -84,7 +84,8 @@ if(isset($_GET['id']) && $_GET['id']!=''){
 		}		
 		
 	}else{
-		header('location:product.php');
+		// header('location:product.php');
+		echo "<script>window.location.href='product.php';</script>";
 		die();
 	}
 }
@@ -300,11 +301,11 @@ if(isset($_POST['submit'])){
 										<input type="text" name="qty[]" placeholder="Qty" class="form-control" required value="<?php echo $list['qty']?>">
 									  </div>
 									  <div class="col-lg-2">
-										<label for="categories" class=" form-control-label">Size</label>
+										<label for="categories" class=" form-control-label">Rom Size</label>
 										<select class="form-control" name="size_id[]" id="size_id">
 										<option>Size</option>
 										<?php
-											$res=mysqli_query($con,"select id,size from size_master order by order_by asc");
+											$res=mysqli_query($con,"select id,size from rom_master order by order_by asc");
 											while($row=mysqli_fetch_assoc($res)){
 												if($list['size_id']==$row['id']){
 													echo "<option value=".$row['id']." selected>".$row['size']."</option>";

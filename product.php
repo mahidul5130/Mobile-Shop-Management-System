@@ -21,9 +21,9 @@ if(isset($_GET['id'])){
 		}
 	}
 	
-	$resAttr=mysqli_query($con,"select product_attributes.*,color_master.color,size_master.size from product_attributes 
+	$resAttr=mysqli_query($con,"select product_attributes.*,color_master.color,rom_master.size from product_attributes 
 	left join color_master on product_attributes.color_id=color_master.id and color_master.status=1 
-	left join size_master on product_attributes.size_id=size_master.id and size_master.status=1
+	left join rom_master on product_attributes.size_id=rom_master.id and rom_master.status=1
 	where product_attributes.product_id='$product_id'");
 	$productAttr=[];
 	$colorArr=[];
@@ -56,8 +56,9 @@ if(isset($_POST['review_submit'])){
 	
 	$added_on=date('Y-m-d h:i:s');
 	mysqli_query($con,"insert into product_review(product_id,user_id,rating,review,status,added_on) values('$product_id','".$_SESSION['USER_ID']."','$rating','$review','1','$added_on')");
-	header('location:product.php?id='.$product_id);
-	die();
+	// header('location:product.php?id='.$product_id);
+	echo "<script>window.location.href='product.php?id='.$product_id;</script>";
+	// die();
 }
 
 
@@ -171,7 +172,7 @@ $product_review_res=mysqli_query($con,"select users.name,product_review.id,produ
 									
 									<?php if($is_size>0){?>
 									<div class="sin__desc align--left">
-										<p><span>size</span></p>
+										<p><span>rom</span></p>
 										<select class="select__size" id="size_attr" onchange="showQty()">
 											<option value="">Size</option>
 											<?php 
@@ -224,8 +225,9 @@ $product_review_res=mysqli_query($con,"select users.name,product_review.id,produ
 								<div id="is_cart_box_show" class="<?php echo $is_cart_box_show?>">
 								
 									<a class="fr__btn" href="javascript:void(0)" onclick="manage_cart('<?php echo $get_product['0']['id']?>','add')">Add to cart</a>
+									<a class="fr__btn buy_now" href="checkout.php" onclick="manage_cart('<?php echo $get_product['0']['id']?>','add')">Buy Now</a>
 									
-									<a class="fr__btn buy_now" href="javascript:void(0)" onclick="manage_cart('<?php echo $get_product['0']['id']?>','add','yes')">Buy Now</a>
+									<!-- <a class="fr__btn buy_now" href="javascript:void(0)" onclick="manage_cart('<?php echo $get_product['0']['id']?>','add','yes')">Buy Now</a> -->
 								
 								</div>
 								

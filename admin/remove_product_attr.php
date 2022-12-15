@@ -7,7 +7,8 @@ if(isset($_POST['id'])){
 	if(isset($_SESSION['ADMIN_LOGIN']) && $_SESSION['ADMIN_LOGIN']!=''){
 
 	}else{
-		header('location:login.php');
+		// header('location:login.php');
+		echo "<script>window.location.href='login.php';</script>";
 		die();
 	}
 

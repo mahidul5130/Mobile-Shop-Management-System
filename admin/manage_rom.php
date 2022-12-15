@@ -6,21 +6,21 @@ $order_by='0';
 $msg='';
 if(isset($_GET['id']) && $_GET['id']!=''){
 	$id=get_safe_value($con,$_GET['id']);
-	$res=mysqli_query($con,"select * from size_master where id='$id'");
+	$res=mysqli_query($con,"select * from rom_master where id='$id'");
 	$check=mysqli_num_rows($res);
 	if($check>0){
 		$row=mysqli_fetch_assoc($res);
 		$size=$row['size'];
 		$order_by=$row['order_by'];
 	}else{
-		redirect('size.php');
+		redirect('rom.php');
 	}
 }
 
 if(isset($_POST['submit'])){
 	$size=get_safe_value($con,$_POST['size']);
 	$order_by=get_safe_value($con,$_POST['order_by']);
-	$res=mysqli_query($con,"select * from size_master where size='$size'");
+	$res=mysqli_query($con,"select * from rom_master where size='$size'");
 	$check=mysqli_num_rows($res);
 	if($check>0){
 		if(isset($_GET['id']) && $_GET['id']!=''){
@@ -37,11 +37,11 @@ if(isset($_POST['submit'])){
 	
 	if($msg==''){
 		if(isset($_GET['id']) && $_GET['id']!=''){
-			mysqli_query($con,"update size_master set size='$size',order_by='$order_by' where id='$id'");
+			mysqli_query($con,"update rom_master set size='$size',order_by='$order_by' where id='$id'");
 		}else{
-			mysqli_query($con,"insert into size_master(size,order_by,status) values('$size','$order_by','1')");
+			mysqli_query($con,"insert into rom_master(size,order_by,status) values('$size','$order_by','1')");
 		}
-		redirect('size.php');
+		redirect('rom.php');
 	}
 }
 ?>

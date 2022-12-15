@@ -17,7 +17,8 @@ if(isset($_POST['submit'])){
 			$_SESSION['ADMIN_ID']=$row['id'];
 			$_SESSION['ADMIN_USERNAME']=$username;
 			$_SESSION['ADMIN_ROLE']=$row['role'];
-			header('location:categories.php');
+			// header('location:categories.php');
+         echo "<script>window.location.href='categories.php';</script>";
 			die();
 		}
 	}else{

@@ -22,7 +22,7 @@ if(isset($_GET['type']) && $_GET['type']!=''){
 	}
 }
 
-$sql="select * from color_master order by color asc";
+$sql="select * from color_master order by id asc";
 $res=mysqli_query($con,$sql);
 ?>
 <div class="content pb-0">

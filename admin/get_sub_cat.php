@@ -4,7 +4,8 @@ require('functions.inc.php');
 if(isset($_SESSION['ADMIN_LOGIN']) && $_SESSION['ADMIN_LOGIN']!=''){
 
 }else{
-	header('location:login.php');
+	// header('location:login.php');
+	echo "<script>window.location.href='login.php';</script>";
 	die();
 }
 $categories_id=get_safe_value($con,$_POST['categories_id']);
