@@ -160,7 +160,7 @@ CREATE TABLE `coupon_master` (
 --
 
 INSERT INTO `coupon_master` (`id`, `coupon_code`, `coupon_value`, `coupon_type`, `cart_min_value`, `status`) VALUES
-(1, 'First50', 1000, 'Rupee', 1500, 1),
+(1, 'First50', 1000, 'BDT', 1500, 1),
 (2, 'First60', 20, 'Percentage', 1000, 1);
 
 -- --------------------------------------------------------

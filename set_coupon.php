@@ -36,7 +36,7 @@ if($count>0){
 	if($cart_min_value>$cart_total){
 		$jsonArr=array('is_error'=>'yes','result'=>$cart_total,'dd'=>'Cart total value must be '.$cart_min_value);
 	}else{
-		if($coupon_type=='Rupee'){
+		if($coupon_type=='BDT'){
 			$final_price=$cart_total-$coupon_value;
 		}else{
 			$final_price=$cart_total-(($cart_total*$coupon_value)/100);
