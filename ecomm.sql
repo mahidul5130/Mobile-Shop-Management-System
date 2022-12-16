@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 16, 2021 at 09:10 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 7.4.13
+-- Generation Time: Dec 16, 2022 at 08:27 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,10 +42,8 @@ CREATE TABLE `admin_users` (
 --
 
 INSERT INTO `admin_users` (`id`, `username`, `password`, `role`, `email`, `mobile`, `status`) VALUES
-(1, 'admin', 'admin', 0, '', '', 1),
-(2, 'vishal', 'vishal', 1, 'vishal@gmail.com', '1234567890', 1),
-(3, 'amit', 'amit', 1, 'amit@gmail.com', '1234567890', 1),
-(5, 'vishal1', 'vishal', 1, 'vishal@gmail.com', '1234567890', 1);
+(5, 'mahidul5130', '0123456789', 0, 'mahidul5130@gmail.com', '01705568901', 1),
+(6, 'chamak', 'chamak', 1, 'chamak.saha@g.bracu.ac.bd', '+8801705568901', 1);
 
 -- --------------------------------------------------------
 
@@ -69,8 +67,8 @@ CREATE TABLE `banner` (
 --
 
 INSERT INTO `banner` (`id`, `heading1`, `heading2`, `btn_txt`, `btn_link`, `image`, `order_no`, `status`) VALUES
-(1, 'collection 2018', 'NICE CHAIR', 'Share Now', 'cart.php', '141838360_368356647_online-shopping-e-commerce-banner-concept-vector-25035204.jpg', 2, 0),
-(2, 'Collection 2021', 'I m Heading', '', '', '163630926_2.png', 1, 1);
+(2, 'Welcome to', 'SHOPAHOLIC Mobile Store', 'Click Here to register now.', 'register.php', '243006337_istockphoto-1138251272-612x612.jpg', 1, 1),
+(3, 'aa', 'SHOPAHOLIC Mobile Store', 'aa', 'register.php', '606471232_317694702_1332764350619072_3582765767417581894_n.jpg', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -89,9 +87,9 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `categories`, `status`) VALUES
-(1, 'Mobile', 1),
-(2, 'Man', 1),
-(4, 'Woman', 1);
+(1, 'Smartphone', 1),
+(2, 'Tablet', 1),
+(3, 'Accessories', 1);
 
 -- --------------------------------------------------------
 
@@ -110,10 +108,10 @@ CREATE TABLE `color_master` (
 --
 
 INSERT INTO `color_master` (`id`, `color`, `status`) VALUES
-(1, 'Red', 1),
-(3, 'Black', 1),
-(4, 'Pink', 1),
-(5, 'Green', 1);
+(1, 'Black', 1),
+(2, 'Silver', 1),
+(3, 'Gold', 1),
+(4, 'Purple', 1);
 
 -- --------------------------------------------------------
 
@@ -135,10 +133,10 @@ CREATE TABLE `contact_us` (
 --
 
 INSERT INTO `contact_us` (`id`, `name`, `email`, `mobile`, `comment`, `added_on`) VALUES
-(1, 'Vishal', 'vishal@gmail.com', '1234567890', 'Test Query', '2020-01-14 00:00:00'),
-(2, 'vishal@gmail.com', '', '1234567890', 'testing', '2020-01-19 07:59:38'),
-(3, 'Vishal', 'vishal@gmail.com', '1234567890', 'testing', '2020-01-19 08:00:09'),
-(4, 'test', 'test@gmail.com', '9990413778', 'test', '2020-05-01 09:21:37');
+(1, 'Md. Mahidul Haque', 'mahidul5130@gmail.com', '1234567890', 'Test Query', '2020-01-14 00:00:00'),
+(2, 'Chamak Saha', 'chamak.saha@g.bracu.ac.bd', '1234567890', 'testing', '2020-01-19 07:59:38'),
+(3, 'Somak Saha', 'somak.saha@g.bracu.ac.bd', '1234567890', 'testing', '2020-01-19 08:00:09'),
+(4, 'Arfan Hakim Swapnil', 'arfan.hakim.swapnil@g.bracu.ac.bd', '9990413778', 'test', '2020-05-01 09:21:37');
 
 -- --------------------------------------------------------
 
@@ -161,7 +159,7 @@ CREATE TABLE `coupon_master` (
 
 INSERT INTO `coupon_master` (`id`, `coupon_code`, `coupon_value`, `coupon_type`, `cart_min_value`, `status`) VALUES
 (1, 'First50', 1000, 'BDT', 1500, 1),
-(2, 'First60', 20, 'Percentage', 1000, 1);
+(2, 'First60', 20, 'Percentage', 10000, 1);
 
 -- --------------------------------------------------------
 
@@ -199,7 +197,15 @@ CREATE TABLE `order` (
 --
 
 INSERT INTO `order` (`id`, `user_id`, `address`, `city`, `pincode`, `payment_type`, `total_price`, `payment_status`, `order_status`, `length`, `breadth`, `height`, `weight`, `txnid`, `mihpayid`, `ship_order_id`, `ship_shipment_id`, `payu_status`, `coupon_id`, `coupon_value`, `coupon_code`, `added_on`) VALUES
-(1, 0, '', '', 0, 'payu', 0, 'Success', 5, 0, 0, 0, 0, '', '', 0, 0, '', 0, '', '', '0000-00-00 00:00:00');
+(2, 4, 'Flat no - D6, MHB Monalee, In front of Graveyard Gate, Ga-40/5, Ga-40/5a, Japaneese School Road, Road in front of Cambrian College, Bashtola, Shahjadpur, Gulshan, Dhaka-1212', 'Dhaka', 1212, 'COD', 201599, 'pending', 1, 0, 0, 0, 0, '3266a92db4b5615019da', '', 0, 0, '', 0, '', '', '2022-12-01 04:47:12'),
+(3, 4, 'Flat no - D6, MHB Monalee, In front of Graveyard Gate, Ga-40/5, Ga-40/5a, Japaneese School Road, Road in front of Cambrian College, Bashtola, Shahjadpur, Gulshan, Dhaka-1212', 'Dhaka', 1212, 'COD', 200599, 'pending', 1, 0, 0, 0, 0, 'eaf23dbfd5ef542f9818', '', 0, 0, '', 1, '1000', 'FIRST50', '2022-12-01 05:43:18'),
+(4, 4, 'Flat no - D6, MHB Monalee, In front of Graveyard Gate, Ga-40/5, Ga-40/5a, Japaneese School Road, Road in front of Cambrian College, Bashtola, Shahjadpur, Gulshan, Dhaka-1212', 'Dhaka', 1212, 'COD', 808496, 'pending', 1, 0, 0, 0, 0, '188f6aa5094ef5e6b6a6', '', 0, 0, '', 2, '289999', 'FIRST60', '2022-12-01 05:46:38'),
+(5, 4, 'Flat no - D6, MHB Monalee, In front of Graveyard Gate, Ga-40/5, Ga-40/5a, Japaneese School Road, Road in front of Cambrian College, Bashtola, Shahjadpur, Gulshan, Dhaka-1212', 'Dhaka', 1212, 'COD', 143599, 'pending', 1, 0, 0, 0, 0, '97f4f68b2b773835aa9b', '', 0, 0, '', 2, '57999.8', 'FIRST60', '2022-12-01 06:00:49'),
+(6, 4, 'Flat no - D6, MHB Monalee, In front of Graveyard Gate, Ga-40/5, Ga-40/5a, Japaneese School Road, Road in front of Cambrian College, Bashtola, Shahjadpur, Gulshan, Dhaka-1212', 'Dhaka', 1212, 'COD', 200599, 'pending', 1, 0, 0, 0, 0, '6eee8c2e9849fd073dda', '', 0, 0, '', 1, '1000', 'FIRST50', '2022-12-01 06:05:18'),
+(7, 4, 'Flat no - D6, MHB Monalee, In front of Graveyard Gate, Ga-40/5, Ga-40/5a, Japaneese School Road, Road in front of Cambrian College, Bashtola, Shahjadpur, Gulshan, Dhaka-1212', 'Dhaka', 1212, 'COD', 161279, 'pending', 1, 0, 0, 0, 0, '49e0fee87ce0871e7c59', '', 0, 0, '', 2, '40319.8', 'FIRST60', '2022-12-01 06:42:28'),
+(8, 4, 'Flat no - D6, MHB Monalee, In front of Graveyard Gate, Ga-40/5, Ga-40/5a, Japaneese School Road, Road in front of Cambrian College, Bashtola, Shahjadpur, Gulshan, Dhaka-1212', 'Dhaka', 1212, 'COD', 201599, 'pending', 1, 0, 0, 0, 0, '86859b993d7bdf01f6ed', '', 0, 0, '', 0, '', '', '2022-12-07 09:02:22'),
+(9, 6, 'Dhaka', 'Dhaka', 40484, 'COD', 402198, 'pending', 1, 0, 0, 0, 0, '18f48b44f4165e4b055f', '', 0, 0, '', 1, '1000', 'First50', '2022-12-13 02:44:10'),
+(10, 6, 'Dhaka', 'Dhaka', 40484, 'COD', 201599, 'pending', 1, 0, 0, 0, 0, '7a8bb6284ea34d759c6c', '', 0, 0, '', 0, '', '', '2022-12-16 09:38:33');
 
 -- --------------------------------------------------------
 
@@ -221,7 +227,16 @@ CREATE TABLE `order_detail` (
 --
 
 INSERT INTO `order_detail` (`id`, `order_id`, `product_id`, `product_attr_id`, `qty`, `price`) VALUES
-(1, 1, 7, 5, 10, 333);
+(2, 2, 19, 24, 1, 201599),
+(3, 3, 19, 24, 1, 201599),
+(4, 4, 19, 21, 5, 219699),
+(5, 5, 19, 24, 1, 201599),
+(6, 6, 19, 24, 1, 201599),
+(7, 7, 19, 24, 1, 201599),
+(8, 8, 19, 24, 1, 201599),
+(9, 9, 19, 24, 1, 201599),
+(10, 9, 19, 25, 1, 201599),
+(11, 10, 19, 24, 1, 201599);
 
 -- --------------------------------------------------------
 
@@ -275,16 +290,12 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `categories_id`, `sub_categories_id`, `name`, `mrp`, `price`, `qty`, `image`, `short_desc`, `description`, `best_seller`, `meta_title`, `meta_desc`, `meta_keyword`, `added_by`, `status`) VALUES
-(1, 1, 0, 'Realme C3 (Frozen Blue, 64 GB) (4 GB RAM)', 9999, 8999, 10, '799153645_303b4a46-a701-4b43-b9c1-d98a2b53422f.jpg', 'Mauris dapibus tellus quis risus maximus molestie. Curabitur eget tortor tellus.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus scelerisque quis nisi porta congue. Aenean sed maximus ligula. Vestibulum quis eros id ex condimentum lacinia. Nam interdum finibus odio, sit amet commodo erat varius sed. In at velit velit. Nullam vitae gravida mi. Donec aliquet nunc non ipsum bibendum, et elementum nibh lobortis. Fusce tempor elit at mauris luctus euismod. Donec eu massa eros. Aenean maximus vitae nisl ut sollicitudin. Aenean urna arcu, laoreet at ante eget, maximus mattis lacus. Mauris dapibus tellus quis risus maximus molestie. Curabitur eget tortor tellus.', 1, 'Realme C3 (Frozen Blue, 64 GB) (4 GB RAM)', '', 'Realme C3 (Frozen Blue, 64 GB) (4 GB RAM)', 0, 1),
-(2, 1, 0, 'APPLE IPHONE 11 PRO MAX (512GB) - MIDNIGHT GREEN', 165800, 155800, 4, '942626953_iphone.jpg', 'Aenean tempus ut leo nec laoreet. Vestibulum ut est neque.', 'Curabitur eget augue dolor. Curabitur id dapibus massa. Vestibulum at enim quis metus ultrices posuere vitae sit amet eros. Morbi et libero pellentesque, efficitur odio nec, congue lorem. Vestibulum faucibus, risus eget pretium efficitur, neque nulla eleifend purus, non venenatis lorem ligula vel nulla. Fusce finibus efficitur sapien vitae laoreet. Integer imperdiet justo sed tellus dictum, at egestas arcu finibus. Fusce et augue elit. Praesent tincidunt purus in purus dictum volutpat. Aenean tempus ut leo nec laoreet. Vestibulum ut est neque.', 0, 'APPLE IPHONE 11 PRO MAX (512GB) - MIDNIGHT GREEN', '', 'APPLE IPHONE 11 PRO MAX (512GB) - MIDNIGHT GREEN', 0, 1),
-(3, 1, 0, 'Samsung Galaxy S10 Plus 1TB (Ceramic White, 12GB RAM)', 115900, 115900, 5, '567328558_samsung-galaxy-s10-plus-1tb-ceramic-white-12gb-ram-.jpg', 'Nullam purus lorem, tincidunt vitae tristique non, imperdiet ut urna.', 'Nullam a nunc et lorem ornare faucibus. Etiam tortor lacus, auctor eget enim at, tincidunt dignissim magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin tincidunt eros eget felis tempor, id volutpat ipsum lacinia. Donec scelerisque risus non purus scelerisque tristique. Mauris enim ligula, condimentum sed iaculis nec, porttitor eu nunc. Sed hendrerit vel arcu vitae iaculis. Phasellus vehicula molestie leo. Nullam purus lorem, tincidunt vitae tristique non, imperdiet ut urna.', 0, 'Samsung Galaxy S10 Plus 1TB (Ceramic White, 12GB RAM)', 'Samsung Galaxy S10 Plus 1TB (Ceramic White, 12GB RAM)', 'Samsung Galaxy S10 Plus 1TB (Ceramic White, 12GB RAM)', 0, 1),
-(4, 2, 2, 'SHEEN-SOLID TROUSER-OLIVE', 1999, 1200, 3, '697347005_2__1538219531_49.204.69.38_600x.jpg', 'per inceptos himenaeos. Ut commodo ullamcorper quam non pulvinar.', 'Duis a felis congue, feugiat est non, suscipit quam. In elit lacus, auctor sed lacus eget, egestas consectetur leo. Duis pellentesque pharetra ante, ac ornare nibh faucibus id. Integer pulvinar malesuada nisl. Nulla vel orci nunc. Nullam a tellus eu ex ullamcorper mollis. Donec commodo ligula a accumsan fermentum. Mauris sed orci lacinia, posuere leo molestie, pretium mi. Cras sodales, neque id cursus fermentum, mi purus vehicula sem, vel laoreet lorem justo id tortor. Sed ut urna ut ipsum vestibulum commodo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut commodo ullamcorper quam non pulvinar.', 0, 'SHEEN-SOLID TROUSER-OLIVE', 'SHEEN-SOLID TROUSER-OLIVE', 'SHEEN-SOLID TROUSER-OLIVE', 0, 1),
-(5, 2, 1, 'NATURE-LINEN SHIRT-GREEN', 2799, 2399, 8, '812581380_nature_green-0224_600x.jpg', 'a nisl pharetra orci, at condimentum nisl lorem elementum ipsum.', 'Nunc auctor turpis ante, eget bibendum mi mollis in. Aliquam quis neque ut libero malesuada auctor. Aliquam interdum enim at commodo gravida. Donec nisl sem, molestie ut quam quis, vulputate venenatis ipsum. Aenean quis ex ut magna accumsan fringilla. Quisque id ex massa. Sed libero ante, fringilla ac condimentum in, porttitor ac risus. Integer mattis odio nec nunc semper imperdiet. In porttitor tellus eget sapien vulputate, eu euismod lacus aliquet. Maecenas molestie elit augue, sit amet fringilla dolor congue et. Nunc eu libero auctor, sollicitudin lectus quis, porta ligula. In vel ullamcorper risus. Nullam viverra, mi sit amet laoreet luctus, urna nisl pharetra orci, at condimentum nisl lorem elementum ipsum.', 0, 'NATURE-LINEN SHIRT-GREEN', 'NATURE-LINEN SHIRT-GREEN', 'T-Shirt, NATURE-LINEN SHIRT-GREEN', 0, 1),
-(6, 2, 1, 'Monte Carlo Turquoise Blue Solid Collar T Shirt', 1999, 1500, 10, '931830512__8-(1)-E5x-104831-NJD.jpg', 'lacus quis urna tristique suscipit. Praesent vitae mi mollis dui facilisis convallis eu faucibus augue.', 'Duis in risus quis lectus dictum fringilla. Aenean tempor pellentesque velit id ullamcorper. Ut id aliquam odio. Morbi id pharetra libero, ut tempor nisi. Maecenas a lectus nec risus maximus rutrum. Mauris vel elit ut magna semper laoreet nec sed magna. Quisque eleifend vel sem non malesuada. Interdum et malesuada fames ac ante ipsum primis in faucibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum eget posuere orci, eu ultrices sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam sit amet ex dictum nisl bibendum elementum non in turpis. In bibendum ipsum nunc, bibendum lacinia lacus maximus eu. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus aliquam lacus quis urna tristique suscipit. Praesent vitae mi mollis dui facilisis convallis eu faucibus augue.', 0, 'Monte Carlo Turquoise Blue Solid Collar T Shirt', 'Monte Carlo Turquoise Blue Solid Collar T Shirt', 'Monte Carlo Turquoise Blue Solid Collar T Shirt', 0, 1),
-(7, 4, 3, 'Floral Print Polo T-shirt', 1900, 1350, 7, '309027777_Floral-Print-Polo-T-shirt.jpg', 'isl pharetra orci, at condimentum nisl lorem elementum ipsum.', 'Nunc auctor turpis ante, eget bibendum mi mollis in. Aliquam quis neque ut libero malesuada auctor. Aliquam interdum enim at commodo gravida. Donec nisl sem, molestie ut quam quis, vulputate venenatis ipsum. Aenean quis ex ut magna accumsan fringilla. Quisque id ex massa. Sed libero ante, fringilla ac condimentum in, porttitor ac risus. Integer mattis odio nec nunc semper imperdiet. In porttitor tellus eget sapien vulputate, eu euismod lacus aliquet. Maecenas molestie elit augue, sit amet fringilla dolor congue et. Nunc eu libero auctor, sollicitudin lectus quis, porta ligula. In vel ullamcorper risus. Nullam viverra, mi sit amet laoreet luctus, urna nisl pharetra orci, at condimentum nisl lorem elementum ipsum.', 0, 'Floral Print Polo T-shirt', 'Floral Print Polo T-shirt', 'Floral Print Polo T-shirt', 0, 1),
-(8, 4, 3, 'Floral Embroidered Polo T-shirt', 1900, 1120, 10, '651584201_Floral-Embroidered-Polo-T-shirt.jpg', 'rius, lacus velit aliquam ex, in dignissim sem eros ac erat. Vestibulum ac arcu tortor.', 'Vestibulum in auctor turpis. Quisque hendrerit eget turpis et molestie. Phasellus nec nibh a lacus rhoncus eleifend. Donec suscipit id diam non mattis. Fusce eu luctus leo. Etiam eget dui libero. Etiam eros lorem, rhoncus et convallis eget, tempus vel tellus. Nam at diam quis nisl tincidunt aliquam. Quisque placerat magna non libero interdum varius vel id risus. Vivamus mollis maximus fermentum. Donec eget nulla dui. Sed ultricies malesuada metus, non feugiat purus fringilla ac. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer accumsan, tortor id eleifend varius, lacus velit aliquam ex, in dignissim sem eros ac erat. Vestibulum ac arcu tortor.', 1, 'Floral Embroidered Polo T-shirt', '', 'Floral Embroidered Polo T-shirt', 0, 1),
-(9, 4, 0, 'Floral Print Polo T-shirt Latest', 1560, 650, 10, '526258680_Floral-Print-Polo-T-shirt1.jpg', 's mus. Vestibulum eget posuere orci, eu ultrices sapien. Orc', 'aximus rutrum. Mauris vel elit ut magna semper laoreet nec sed magna. Quisque eleifend vel sem non malesuada. Interdum et malesuada fames ac ante ipsum primis in faucibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum eget posuere orci, eu ultrices sapien. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam sit amet ex d', 1, 'Floral Print Polo T-shirt Latest', '', 'Floral Print Polo T-shirt Latest', 0, 1),
-(10, 4, 3, 'test', 100, 10, 1, '977077907_651584201_Floral-Embroidered-Polo-T-shirt.jpg', 'test', 'test', 0, '', '', '', 0, 1);
+(19, 1, 1, 'Apple iPhone 14 Pro Max', 0, 0, 0, '336944823_apple-iphone-14-pro-4.jpg', 'Apple iPhone 14 Pro Max comes with a 6.7 inches LTPO Super Retina XDR OLED 1290 x 2796 pixels screen. It has a double punch-hole design. The back camera is of quad 48+12+12 Megapixel + TOF 3D LiDAR scanner with powerful image processing capability and 4K video recording. The front one is of Dual 12 MP and SL 3D camera. Apple iPhone 14 Pro Max comes with – mAh battery with – fast charging solution. It has 6 GB RAM, up to 3.46 GHz Hexa-core CPU and Apple GPU. It is powered by a 4 nm Apple A16 Bionic chipset. The device comes with 128, 256, 512 GB or 1 TB internal storage.', '<figure class=\"wp-block-table aligncenter\"><div class=\"table-is-responsive\"><table><tbody><tr><td><strong>First Release</strong></td><td>September 16, 2022</td></tr><tr><td><strong>Colors</strong></td><td>Space Black, Silver, Gold, Deep Purple</td></tr><tr><th> Connectivity</th><th> </th></tr><tr><td>Network</td><td>2G, 3G, 4G, 5G</td></tr><tr><td>SIM</td><td>Dual SIM (Nano-SIM and eSIM)</td></tr><tr><td>WLAN</td><td>? dual-band, Wi-Fi hotspot</td></tr><tr><td>Bluetooth</td><td>? v5.3, A2DP, LE</td></tr><tr><td>GPS</td><td>? A-GPS, GLONASS, GALILEO, BDS, QZSS</td></tr><tr><td>Radio</td><td>?</td></tr><tr><td>USB</td><td>Lightning, USB 2.0</td></tr><tr><td>OTG</td><td>?</td></tr><tr><td>USB Type-C</td><td>? (Proprietary reversible connector)</td></tr><tr><td>NFC</td><td>?</td></tr><tr><th> Body</th><th> </th></tr><tr><td>Style</td><td>Double Punch-hole</td></tr><tr><td>Material</td><td>Gorilla Glass front & back, stainless steel frame</td></tr><tr><td>Water Resistance</td><td>? IP68 dust/water resistant (up to 6m for 30 mins)</td></tr><tr><td>Dimensions</td><td>160.7 x 77.6 x 7.9 millimeters</td></tr><tr><td>Weight</td><td>240 grams</td></tr><tr><th> Display</th><th> </th></tr><tr><td>Size</td><td>6.7 inches</td></tr><tr><td>Resolution</td><td>1290 x 2796 pixels (460 ppi)</td></tr><tr><td>Technology</td><td>LTPO Super Retina XDR OLED Touchscreen</td></tr><tr><td>Protection</td><td>? Scratch-resistant ceramic glass, oleophobic coating</td></tr><tr><td>Features</td><td>120Hz, HDR10, Dolby Vision, 2000 nits (max.), Always-On display</td></tr><tr><th> Back Camera</th><th> </th></tr><tr><td>Resolution</td><td>Quad 48+12+12 Megapixel + TOF 3D LiDAR scanner</td></tr><tr><td>Features</td><td>Dual Pixel PDAF, sensor-shift OIS, ultrawide, telephoto, 3x optical zoom, depth & more</td></tr><tr><td>Video Recording</td><td>4K (2160p), Dolby Vision HDR, 10-bit HDR, stereo sound rec.,Cinematic mode, ProRes</td></tr><tr><th> Front Camera</th><th> </th></tr><tr><td>Resolution</td><td>Dual 12 Megapixel + SL 3D</td></tr><tr><td>Features</td><td>F/1.9 aperture, PDAF, HDR, 1/3.6?, depth / biometrics sensor</td></tr><tr><td>Video Recording</td><td>4K (2160p), gyro-EIS, Cinematic mode</td></tr><tr><th> Battery</th><th> </th></tr><tr><td>Type and Capacity</td><td>Lithium-ion – mAh (non-removable)</td></tr><tr><td>Fast Charging</td><td>? – Fast Charging (50% in 30 minutes) <br>USB Power Delivery 2.0</td></tr><tr><td>Wireless Charging</td><td>? Fast Wireless Charging (15W MagSafe, 7.5W Qi magnetic)</td></tr><tr><th> Performance</th><th> </th></tr><tr><td>Operating System</td><td>iOS 16</td></tr><tr><td>Chipset</td><td>Apple A16 Bionic (4 nm)</td></tr><tr><td>RAM</td><td>6 GB</td></tr><tr><td>Processor</td><td>Hexa-core, up to 3.46 GHz</td></tr><tr><td>GPU</td><td>Apple GPU (5-core graphics)</td></tr><tr><th> Storage</th><th> </th></tr><tr><td>ROM</td><td>128 / 256 / 512 GB / 1 TB (NVMe)</td></tr><tr><td>External Slot</td><td>?</td></tr><tr><th> Sound</th><th> </th></tr><tr><td>3.5mm Jack</td><td>?</td></tr><tr><td>Features</td><td>Loudspeaker (stereo speakers)</td></tr><tr><th> Security</th><th> </th></tr><tr><td>Fingerprint</td><td>?</td></tr><tr><td>Face Unlock</td><td>? Apple Face ID</td></tr><tr><th> Others</th></tr><tr><td>Notification Light</td><td>? LED Flash for Alerts</td></tr><tr><td>Sensors</td><td>Face ID, Accelerometer, Proximity, Gyroscope, E-Compass, Barometer</td></tr><tr><td>Other Features</td><td>– Apple Pay (Visa, MasterCard, AMEX certified)<br>– Siri<br>– Ultra Wideband (UWB) support<br>– Emergency SOS via satellite (SMS sending/receiving)</td></tr><tr><td>Manufactured by</td><td>Apple</td></tr><tr><td>Sar Value</td><td> </td></tr></tbody></table></div></figure>', 1, '', '', '', 1, 1),
+(20, 3, 16, 'Joyroom JR-QP191 10000mAh 22.5W Fast Charging Power Bank', 0, 0, 0, '991196270_jr-qp191-01-500x500.jpg', '<div class=\"short-description\" itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\">\r\n                            <link itemprop=\"availability\" href=\"http://schema.org/InStock\">\r\n                            <link itemprop=\"itemCondition\" href=\"http://schema.org/NewCondition\">\r\n                            <meta itemprop=\"priceCurrency\" content=\"BDT\">\r\n                            <meta itemprop=\"price\" content=\"1305.0000\">\r\n                            <h2>Key Features</h2>\r\n                            <ul><li>Model: JR-QP191</li><li>Battery Display: Large LED Digital Display\r\n</li><li>Battery Capacity: 10000mAh / 22.5W\r\n</li><li>Input Ports: Micro USB, USB Type-C\r\n</li><li>Output Ports: USB x2 &amp; Type-C x 1</li><li class=\"view-more\" data-area=\"specification\">View More Info</li></ul>\r\n                        </div>', '<div class=\"short-description\" itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\">\r\n                            <link itemprop=\"availability\" href=\"http://schema.org/InStock\">\r\n                            <link itemprop=\"itemCondition\" href=\"http://schema.org/NewCondition\">\r\n                            <meta itemprop=\"priceCurrency\" content=\"BDT\">\r\n                            <meta itemprop=\"price\" content=\"1305.0000\">\r\n                            <h2>Key Features</h2>\r\n                            <ul><li>Model: JR-QP191</li><li>Battery Display: Large LED Digital Display\r\n</li><li>Battery Capacity: 10000mAh / 22.5W\r\n</li><li>Input Ports: Micro USB, USB Type-C\r\n</li><li>Output Ports: USB x2 &amp; Type-C x 1</li><li class=\"view-more\" data-area=\"specification\">View More Info</li></ul>\r\n                        </div>', 0, '', '', '', 5, 1),
+(21, 1, 4, 'Oppo A17K', 0, 0, 0, '462102242_Oppo-A17K.jpg', '<p>Oppo A17K comes with 6.56 inches HD+ screen. It has a Full-View waterdrop notch design. The back camera is of dual 8 MP with LED flash, autofocus, panorama etc. and Full HD video recording. The front camera is of 5 MP. Oppo A17K comes with 5000 mAh battery with 10W fast charging. It has 3 GB RAM, up to 2.3 GHz octa-core CPU and PowerVR GE8320 GPU. It is powered by a MediaTek Helio G35 (12nm) chipset. The device comes with 64 GB internal storage and MicroSD slot. There is a side-mounted fingerprint sensor in this phone.</p>', '<table><tbody><tr><td><strong>First Release</strong></td><td>October 18, 2022</td></tr><tr><td><strong>Colors</strong></td><td>Navy Blue, Gold</td></tr><tr><th> \r\nConnectivity</th><th></th></tr><tr><td>Network</td><td>2G, 3G, 4G</td></tr><tr><td>SIM</td><td>Dual Nano SIM</td></tr><tr><td>WLAN</td><td>? dual-band, Wi-Fi hotspot</td></tr><tr><td>Bluetooth</td><td>? v5.3, A2DP, LE, aptX HD</td></tr><tr><td>GPS</td><td>? A-GPS, GLONASS, BDS, GALILEO</td></tr><tr><td>Radio</td><td>Unspecified</td></tr><tr><td>USB</td><td>v2.0</td></tr><tr><td>OTG</td><td>?</td></tr><tr><td>USB Type-C</td><td>?</td></tr><tr><td>NFC</td><td>?</td></tr><tr><th> \r\nBody</th><th></th></tr><tr><td>Style</td><td>Minimal Notch</td></tr><tr><td>Material</td><td>Panda Glass front, plastic body</td></tr><tr><td>Water Resistance</td><td>? IPX4 water resistance</td></tr><tr><td>Dimensions</td><td>164.2 x 75.6 x 8.3 millimeters</td></tr><tr><td>Weight</td><td>189 grams</td></tr><tr><th> \r\nDisplay</th><th></th></tr><tr><td>Size</td><td>6.56 inches</td></tr><tr><td>Resolution</td><td>HD+ 720 x 1612 pixels (269 ppi)</td></tr><tr><td>Technology</td><td>IPS LCD Touchscreen</td></tr><tr><td>Protection</td><td>? Panda Glass</td></tr><tr><td>Features</td><td>Multitouch</td></tr><tr><th> \r\nBack Camera</th><th></th></tr><tr><td>Resolution</td><td>8 Megapixel</td></tr><tr><td>Features</td><td>Autofocus, LED flash, f/2.0 & more</td></tr><tr><td>Video Recording</td><td>Full HD (1080p)</td></tr><tr><th> \r\nFront Camera</th><th></th></tr><tr><td>Resolution</td><td>5 Megapixel</td></tr><tr><td>Features</td><td>F/2.2 aperture & more</td></tr><tr><td>Video Recording</td><td>Full HD (1080p)</td></tr><tr><th> \r\nBattery</th><th></th></tr><tr><td>Type and Capacity</td><td>Lithium-polymer 5000 mAh (non-removable)</td></tr><tr><td>Fast Charging</td><td>? 10W Fast Charging</td></tr><tr><th> \r\nPerformance</th><th></th></tr><tr><td>Operating System</td><td>Android 12 (ColorOS 12.1)</td></tr><tr><td>Chipset</td><td>Mediatek Helio G35 (12 nm)</td></tr><tr><td>RAM</td><td>3 GB</td></tr><tr><td>Processor</td><td>Octa core, up to 2.3 GHz</td></tr><tr><td>GPU</td><td>PowerVR GE8320</td></tr><tr><th> \r\nStorage</th><th></th></tr><tr><td>ROM</td><td>64 GB (eMMC 5.1)</td></tr><tr><td>MicroSD Slot</td><td>?</td></tr><tr><th> \r\nSound</th><th></th></tr><tr><td>3.5mm Jack</td><td>?</td></tr><tr><td>Features</td><td>Loudspeaker</td></tr><tr><th> \r\nSecurity</th><th></th></tr><tr><td>Fingerprint</td><td>? Side-mounted</td></tr><tr><td>Face Unlock</td><td>?</td></tr><tr><th> \r\nOthers</th></tr><tr><td>Notification Light</td><td></td></tr><tr><td>Sensors</td><td>Fingerprint, Accelerometer, Proximity, E-Compass</td></tr><tr><td>Manufactured by</td><td>Oppo</td></tr><tr><td>Made in</td><td>Bangladesh</td></tr><tr><td>Sar Value</td><td></td></tr></tbody></table>', 1, '', '', '', 5, 1),
+(22, 1, 2, 'Samsung Galaxy A23', 0, 0, 0, '367443282_Samsung-Galaxy-A23.jpg', '<p>Samsung Galaxy A23 comes with 6.6 inches Full HD+ PLS TFT screen. It has a waterdrop notch front camera design. The back camera is of Quad 50+5+2+2 with PDAF, OIS, f/1.8 aperture, ultrawide, depth sensor, dedicated macro camera etc. and 4K video recording. The front camera is of 8 MP. Galaxy A23&nbsp;comes with 5000 mAh battery with 25W fast charging. It has 6 GB RAM, up to 2.4 GHz octa-core CPU and Adreno 610 GPU. It is powered by a Qualcomm Snapdragon 680 4G (6 nm) chipset. The device comes with 128 GB internal storage and dedicated MicroSD slot. There is a side-mounted fingerprint sensor in this phone.</p>', '<table><tbody><tr><td><strong>First Release</strong></td><td>March 25, 2022</td></tr><tr><td><strong>Colors</strong></td><td>Black, White, Peach, Blue</td></tr><tr><th>&nbsp;\r\nConnectivity</th><th></th></tr><tr><td>Network</td><td>2G, 3G, 4G</td></tr><tr><td>SIM</td><td>Dual Nano SIM</td></tr><tr><td>WLAN</td><td>?&nbsp;dual-band, Wi-Fi direct, Wi-Fi hotspot</td></tr><tr><td>Bluetooth</td><td>? v5.0, A2DP, LE</td></tr><tr><td>GPS</td><td>? A-GPS, GLONASS, BDS, Galileo</td></tr><tr><td>Radio</td><td>Unspecified</td></tr><tr><td>USB</td><td>v2.0</td></tr><tr><td>OTG</td><td>?</td></tr><tr><td>USB Type-C</td><td>?</td></tr><tr><td>NFC</td><td>?</td></tr><tr><th>&nbsp;\r\nBody</th><th></th></tr><tr><td>Style</td><td>Minimal Notch</td></tr><tr><td>Material</td><td>Gorilla Glass 5 front, plastic body</td></tr><tr><td>Water Resistance</td><td>?</td></tr><tr><td>Dimensions</td><td>164.5 x 76.9 x 8.4 millimeters</td></tr><tr><td>Weight</td><td>195 grams</td></tr><tr><th>&nbsp;\r\nDisplay</th><th></th></tr><tr><td>Size</td><td>6.6 inches</td></tr><tr><td>Resolution</td><td>Full HD+ 1080 x 2408 pixels (400 ppi)</td></tr><tr><td>Technology</td><td>PLS TFT Touchscreen</td></tr><tr><td>Protection</td><td>? Corning Gorilla Glass 5</td></tr><tr><td>Features</td><td>Multitouch</td></tr><tr><th>&nbsp;\r\nBack Camera</th><th></th></tr><tr><td>Resolution</td><td>Quad 50+5+2+2 Megapixel</td></tr><tr><td>Features</td><td>PDAF, OIS, f/1.8, macro, 123º ultrawide, depth, LED flash &amp; more</td></tr><tr><td>Video Recording</td><td>4K Ultra HD (2160p)</td></tr><tr><th>&nbsp;\r\nFront Camera</th><th></th></tr><tr><td>Resolution</td><td>8 Megapixel</td></tr><tr><td>Features</td><td>F/2.2 aperture</td></tr><tr><td>Video Recording</td><td>Full HD (1080p)</td></tr><tr><th>&nbsp;\r\nBattery</th><th></th></tr><tr><td>Type and Capacity</td><td>Lithium-polymer 5000 mAh (non-removable)</td></tr><tr><td>Fast Charging</td><td>? 25W Fast Charging</td></tr><tr><th>&nbsp;\r\nPerformance</th><th></th></tr><tr><td>Operating System</td><td>Android 12 (One UI 4.1)</td></tr><tr><td>Chipset</td><td>Qualcomm Snapdragon 680 4G (6 nm)</td></tr><tr><td>RAM</td><td>6 GB</td></tr><tr><td>Processor</td><td>Octa core, up to 2.4 GHz</td></tr><tr><td>GPU</td><td>Adreno 610</td></tr><tr><th>&nbsp;\r\nStorage</th><th></th></tr><tr><td>ROM</td><td>64 / 128 GB (eMMC 5.1)</td></tr><tr><td>MicroSD Slot</td><td>?&nbsp;Dedicated slot</td></tr><tr><th>&nbsp;\r\nSound</th><th></th></tr><tr><td>3.5mm Jack</td><td>?</td></tr><tr><td>Features</td><td>Loudspeaker</td></tr><tr><th>&nbsp;\r\nSecurity</th><th></th></tr><tr><td>Fingerprint</td><td>? Side-mounted</td></tr><tr><td>Face Unlock</td><td>?</td></tr><tr><th>&nbsp;\r\nOthers</th></tr><tr><td>Notification Light</td><td></td></tr><tr><td>Sensors</td><td>Fingerprint, Accelerometer, Proximity, Gyroscope, E-Compass</td></tr><tr><td>Manufactured by</td><td>Samsung</td></tr><tr><td>Made in</td><td>Bangladesh</td></tr><tr><td>Sar Value</td><td></td></tr></tbody></table>', 1, '', '', '', 5, 1),
+(23, 1, 1, 'Google Pixel 4a 5G Full Specifications', 0, 0, 0, '602114232_Google-Pixel-4a-new-black.jpg', '<p>Google Pixel 4a 5G comes with&nbsp;6.2 inches Full HD+ OLED screen. It has&nbsp;a left punch-hole design. The&nbsp;back camera is of dual 12.2+16 MP&nbsp;with PDAF, dual-LED flash, OIS, ultrawide etc. and 4K video recording. The&nbsp;front camera is of 8 MP. Google Pixel 4a 5G comes with&nbsp;3885 mAh battery&nbsp;and&nbsp;18W fast charging. It has&nbsp;6 GB RAM, up to 2.4 GHz octa-core CPU and Adreno 620 GPU. It is powered by a&nbsp;Qualcomm Snapdragon 765G (7 nm) chipset. The device comes with 128 GB internal storage and no MicroSD slot. There is a back-mounted&nbsp;fingerprint sensor&nbsp;in this phone.</p>', '<table><tbody><tr><td><strong>First Release</strong> </td><td>Upcoming [Expected: November 5, 2020]</td></tr><tr><td><strong>Colors</strong></td><td>Just Black</td></tr><tr><th>&nbsp;\r\nConnectivity</th><th></th></tr><tr><td>Network</td><td>2G, 3G, 4G, 5G</td></tr><tr><td>SIM</td><td> Nano-SIM and/or eSIM</td></tr><tr><td>WLAN</td><td>? dual-band, Wi-Fi direct, DLNA, Wi-Fi hotspot</td></tr><tr><td>Bluetooth</td><td>? v5.1, A2DP, LE,&nbsp;aptX HD</td></tr><tr><td>GPS</td><td>? A-GPS, GLONASS, BDS, GALILEO, QZSS</td></tr><tr><td>Radio</td><td>Unspecified</td></tr><tr><td>USB</td><td>v3.1</td></tr><tr><td>OTG</td><td>?</td></tr><tr><td>USB Type-C</td><td>?</td></tr><tr><td>NFC</td><td>?</td></tr><tr><th>&nbsp;\r\nBody</th><th></th></tr><tr><td>Style</td><td>Punch-hole</td></tr><tr><td>Material</td><td>Gorilla Glass 3 front, plastic body</td></tr><tr><td>Water Resistance</td><td> ? </td></tr><tr><td>Dimensions</td><td>153.9 x 74 x 8.2 millimeters</td></tr><tr><td>Weight</td><td>168 grams</td></tr><tr><th>&nbsp;\r\nDisplay</th><th></th></tr><tr><td>Size</td><td>6.2 inches</td></tr><tr><td>Resolution</td><td>Full HD+ 1080 x 2340 pixels (413 ppi)</td></tr><tr><td>Technology</td><td>OLED Touchscreen</td></tr><tr><td>Protection</td><td>? Corning Gorilla Glass 3</td></tr><tr><td>Features</td><td>Always-on display, HDR</td></tr><tr><th>&nbsp;\r\nBack Camera</th><th></th></tr><tr><td>Resolution</td><td>12.2 + 16 Megapixel</td></tr><tr><td>Features</td><td>Dual pixel PDAF, LED flash, 107º ultrawide, f/1.7 &amp; f/2.2, OIS, auto-HDR &amp; more</td></tr><tr><td>Video Recording</td><td>Ultra HD 4K (2160p), gyro-EIS</td></tr><tr><th>&nbsp;\r\nFront Camera</th><th></th></tr><tr><td>Resolution</td><td>8 Megapixel</td></tr><tr><td>Features</td><td>F/2.0, 1/4.0?, 1.12µm, auto-HDR &amp; more</td></tr><tr><td>Video Recording</td><td>Full HD (1080p)</td></tr><tr><th>&nbsp;\r\nBattery</th><th></th></tr><tr><td>Type and Capacity</td><td>Lithium-polymer 3885 mAh (non-removable)</td></tr><tr><td>Fast Charging</td><td>? 18W Fast Charging<br>USB Power Delivery 2.0</td></tr><tr><th>&nbsp;\r\nPerformance</th><th></th></tr><tr><td>Operating System</td><td>Android 11</td></tr><tr><td>Chipset</td><td>Qualcomm Snapdragon 765G (7 nm)</td></tr><tr><td>RAM</td><td>6 GB</td></tr><tr><td>Processor</td><td>Octa core, up to 2.4 GHz</td></tr><tr><td>GPU</td><td>Adreno 620</td></tr><tr><th>&nbsp;\r\nStorage</th><th></th></tr><tr><td>ROM</td><td>128 GB (UFS 2.1)</td></tr><tr><td>MicroSD Slot</td><td>?</td></tr><tr><th>&nbsp;\r\nSound</th><th></th></tr><tr><td>3.5mm Jack</td><td>?</td></tr><tr><td>Features</td><td>Loudspeaker (stereo speakers)</td></tr><tr><th>&nbsp;\r\nSecurity</th><th></th></tr><tr><td>Fingerprint</td><td>? On the back</td></tr><tr><td>Face Unlock</td><td>?</td></tr><tr><th>&nbsp;\r\nOthers</th><th></th></tr><tr><td>Notification Light</td><td></td></tr><tr><td>Sensors</td><td>Fingerprint, Accelerometer, Gyro, Proximity, E-Compass, Barometer</td></tr><tr><td>Manufactured by</td><td>Google</td></tr><tr><td>Made in</td><td></td></tr><tr><td>Sar Value</td><td></td></tr></tbody></table>', 0, '', '', '', 5, 1),
+(24, 1, 3, 'Xiaomi Redmi Note 11 Full Specifications', 0, 0, 0, '470049708_Xiaomi-Redmi-Note-11.jpg', '<p>Xiaomi Redmi Note 11 comes with 6.43 inches Full HD+  AMOLED screen. It has a center punch-hole design on the front. The display is protected by a 3rd generation Gorilla Glass. The back camera is of quad 50+8+2+2 MP with PDAF, f/1.8 aperture, 118º ultrawide, depth sensor, dedicated macro camera etc. and Full HD video recording. The front camera is of 13 MP. Xiaomi Redmi Note 11 comes with 5000 mAh big battery with a 33W Fast Charging solution. It has 4, 6 or 8 GB RAM, up to 2.4 GHz octa-core CPU and Adreno 610 GPU. It is powered by a Qualcomm Snapdragon 680 4G (6 nm)&nbsp;chipset. The phone comes with 64 or 128 GB internal storage and dedicated MicroSD slot. There is a side-mounted fingerprint sensor in this phone.</p>', '<table><tbody><tr><td><strong>First Release</strong></td><td>February 9, 2022</td></tr><tr><td><strong>Colors</strong></td><td>Graphite Gray, Pearl White, Star Blue</td></tr><tr><th>&nbsp;\r\nConnectivity</th><th></th></tr><tr><td>Network</td><td>2G, 3G, 4G</td></tr><tr><td>SIM</td><td>Dual Nano SIM</td></tr><tr><td>WLAN</td><td>? dual-band, Wi-Fi direct, Wi-Fi hotspot</td></tr><tr><td>Bluetooth</td><td>? v5.0, A2DP, LE</td></tr><tr><td>GPS</td><td>? A-GPS, GLONASS, BDS, GALILEO</td></tr><tr><td>Radio</td><td>? FM</td></tr><tr><td>USB</td><td>v2.0</td></tr><tr><td>OTG</td><td>?</td></tr><tr><td>USB Type-C</td><td>?</td></tr><tr><td>NFC</td><td>? (Market dependent)</td></tr><tr><td>Infrared</td><td>?</td></tr><tr><th>&nbsp;\r\nBody</th><th></th></tr><tr><td>Style</td><td>Punch-hole</td></tr><tr><td>Material</td><td>Gorilla Glass 3 front, plastic body</td></tr><tr><td>Water Resistance</td><td>? (IP53, dust and splash protection)</td></tr><tr><td>Dimensions</td><td>159.9 x 73.9 x 8.1 millimeters</td></tr><tr><td>Weight</td><td>179 grams</td></tr><tr><th>&nbsp;\r\nDisplay</th><th></th></tr><tr><td>Size</td><td>6.43 inches</td></tr><tr><td>Resolution</td><td>Full HD+ 1080 x 2400 pixels (409 ppi)</td></tr><tr><td>Technology</td><td>AMOLED Touchscreen</td></tr><tr><td>Protection</td><td>? Corning Gorilla Glass 3</td></tr><tr><td>Features</td><td>90Hz refresh rate, 1000 nits max. brightness</td></tr><tr><th>&nbsp;\r\nBack Camera</th><th></th></tr><tr><td>Resolution</td><td>Quad 50+8+2+2 Megapixel</td></tr><tr><td>Features</td><td>PDAF, LED flash, f/1.8, 1/2.76?, 0.64µm, ultrawide, macro, depth &amp; more</td></tr><tr><td>Video Recording</td><td>Full HD (1080p)</td></tr><tr><th>&nbsp;\r\nFront Camera</th><th></th></tr><tr><td>Resolution</td><td>13 Megapixel</td></tr><tr><td>Features</td><td>F/2.5, HDR, 1/3.06?, 1.12µm &amp; more</td></tr><tr><td>Video Recording</td><td>Full HD (1080p)</td></tr><tr><th>&nbsp;\r\nBattery</th><th></th></tr><tr><td>Type and Capacity</td><td>Lithium-polymer 5000 mAh (non-removable)</td></tr><tr><td>Fast Charging</td><td>? 33W Quick Charge 3+ (100% in 60 min)<br>– Power Delivery 3.0</td></tr><tr><th>&nbsp;\r\nPerformance</th><th></th></tr><tr><td>Operating System</td><td>Android 11 (MIUI 13)</td></tr><tr><td>Chipset</td><td>Qualcomm Snapdragon 680 4G (6 nm)</td></tr><tr><td>RAM</td><td>4 / 6 / 8 GB</td></tr><tr><td>Processor</td><td>Octa core, up to 2.4 GHz</td></tr><tr><td>GPU</td><td>Adreno 610</td></tr><tr><th>&nbsp;\r\nStorage</th><th></th></tr><tr><td>ROM</td><td>64 / 128 GB (UFS 2.2)</td></tr><tr><td>MicroSD Slot</td><td>? Dedicated slot</td></tr><tr><th>&nbsp;\r\nSound</th><th></th></tr><tr><td>3.5mm Jack</td><td>?</td></tr><tr><td>Features</td><td>Loudspeaker (stereo speakers), 24-bit/192kHz audio</td></tr><tr><th>&nbsp;\r\nSecurity</th><th></th></tr><tr><td>Fingerprint</td><td>? Side-mounted</td></tr><tr><td>Face Unlock</td><td>?</td></tr><tr><th>&nbsp;\r\nOthers</th></tr><tr><td>Notification Light</td><td></td></tr><tr><td>Sensors</td><td>Fingerprint, Accelerometer, Gyroscope, Proximity, E-Compass</td></tr><tr><td>Manufactured by</td><td>Xiaomi</td></tr><tr><td>Made in</td><td>Bangladesh</td></tr><tr><td>Sar Value</td><td></td></tr></tbody></table>', 1, '', '', '', 5, 1);
 
 -- --------------------------------------------------------
 
@@ -307,16 +318,28 @@ CREATE TABLE `product_attributes` (
 --
 
 INSERT INTO `product_attributes` (`id`, `product_id`, `size_id`, `color_id`, `mrp`, `price`, `qty`) VALUES
-(1, 8, 5, 3, 1900, 1120, 10),
-(2, 8, 4, 5, 1900, 1120, 8),
-(3, 8, 2, 3, 1900, 1120, 9),
-(4, 8, 4, 3, 1800, 1050, 4),
-(5, 7, 0, 3, 1900, 1350, 10),
-(6, 7, 0, 5, 1900, 1350, 8),
-(7, 7, 0, 4, 1900, 1350, 6),
-(8, 6, 5, 0, 1999, 1500, 10),
-(9, 6, 4, 0, 1989, 1490, 9),
-(10, 5, 0, 0, 2799, 2399, 10);
+(12, 19, 5, 4, 297249, 289999, 100),
+(13, 19, 5, 3, 297249, 289999, 100),
+(14, 19, 5, 2, 297249, 289999, 100),
+(15, 19, 5, 1, 297249, 289999, 100),
+(16, 19, 4, 4, 262296, 255899, 100),
+(17, 19, 4, 3, 262296, 255899, 100),
+(18, 19, 4, 2, 262296, 255899, 100),
+(19, 19, 4, 1, 262296, 255899, 100),
+(20, 19, 3, 4, 225191, 219699, 100),
+(21, 19, 3, 3, 225191, 219699, 100),
+(22, 19, 3, 2, 225191, 219699, 100),
+(23, 19, 3, 1, 225191, 219699, 100),
+(24, 19, 2, 4, 206639, 201599, 100),
+(25, 19, 2, 3, 206639, 201599, 100),
+(26, 19, 2, 2, 206639, 201599, 100),
+(27, 19, 2, 1, 206639, 201599, 100),
+(28, 20, 0, 1, 1405, 1305, 100),
+(29, 21, 1, 1, 13990, 12990, 100),
+(30, 22, 2, 2, 31599, 27999, 100),
+(31, 23, 2, 1, 52000, 50000, 100),
+(32, 24, 1, 0, 20000, 19599, 100),
+(33, 24, 2, 0, 21000, 20499, 100);
 
 -- --------------------------------------------------------
 
@@ -335,8 +358,14 @@ CREATE TABLE `product_images` (
 --
 
 INSERT INTO `product_images` (`id`, `product_id`, `product_images`) VALUES
-(1, 8, '479197953_526258680_Floral-Print-Polo-T-shirt1.jpg'),
-(2, 8, '301120849_309027777_Floral-Print-Polo-T-shirt.jpg');
+(5, 19, '474903268_Apple-iPhone-14-Pro-iPhone-14-Pro-Max-silver-220907_inline.jpg.large.jpg'),
+(6, 19, '855471677_iphone-14-pro-finish-select-202209-6-7inch-gold.jpg'),
+(7, 19, '803795755_download.jpg'),
+(8, 20, '392270377_jr-qp191-01-500x500.jpg'),
+(9, 21, '527151613_Oppo-A17K.jpg'),
+(10, 22, '510105240_Samsung-Galaxy-A23.jpg'),
+(11, 23, '392195504_Google-Pixel-4a-new-black.jpg'),
+(12, 24, '686266783_Xiaomi-Redmi-Note-11.jpg');
 
 -- --------------------------------------------------------
 
@@ -359,7 +388,31 @@ CREATE TABLE `product_review` (
 --
 
 INSERT INTO `product_review` (`id`, `product_id`, `user_id`, `rating`, `review`, `status`, `added_on`) VALUES
-(2, 9, 1, 'Good', 'asAS', 0, '2021-05-05 08:31:39');
+(14, 19, 6, 'Worst', 'Price is too high', 1, '2022-12-15 03:16:33');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rom_master`
+--
+
+CREATE TABLE `rom_master` (
+  `id` int(11) NOT NULL,
+  `size` varchar(255) NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `order_by` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `rom_master`
+--
+
+INSERT INTO `rom_master` (`id`, `size`, `status`, `order_by`) VALUES
+(1, '64 GB', 1, 0),
+(2, '128 GB', 1, 1),
+(3, '256 GB', 1, 2),
+(4, '512 GB', 1, 3),
+(5, '1 TB', 1, 4);
 
 -- --------------------------------------------------------
 
@@ -383,30 +436,6 @@ INSERT INTO `shiprocket_token` (`id`, `token`, `added_on`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rom_master`
---
-
-CREATE TABLE `rom_master` (
-  `id` int(11) NOT NULL,
-  `size` varchar(255) NOT NULL,
-  `status` tinyint(4) NOT NULL,
-  `order_by` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `rom_master`
---
-
-INSERT INTO `rom_master` (`id`, `size`, `status`, `order_by`) VALUES
-(1, 'X', 1, 3),
-(2, 'XL', 1, 4),
-(4, 'M', 1, 2),
-(5, 'S', 1, 1),
-(6, 'XXL', 1, 5);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `sub_categories`
 --
 
@@ -422,9 +451,24 @@ CREATE TABLE `sub_categories` (
 --
 
 INSERT INTO `sub_categories` (`id`, `categories_id`, `sub_categories`, `status`) VALUES
-(1, 2, 'T-Shirt', 1),
-(2, 2, 'Trouser', 1),
-(3, 4, 'Shirt', 1);
+(1, 1, 'Apple', 1),
+(2, 1, 'Samsung', 1),
+(3, 1, 'Xiaomi', 1),
+(4, 1, 'Oppo', 1),
+(5, 1, 'Vivo', 1),
+(6, 1, 'Google', 1),
+(7, 1, 'OnePlus', 1),
+(8, 1, 'Lenovo', 1),
+(9, 1, 'LG', 1),
+(10, 1, 'Huawei', 1),
+(11, 2, 'Apple', 1),
+(12, 2, 'Samsung', 1),
+(13, 2, 'Lenovo', 1),
+(14, 2, 'Amazon', 1),
+(16, 3, 'Power Banks', 1),
+(17, 3, 'Wall Charger', 1),
+(18, 3, 'USB Cables', 1),
+(19, 3, 'Headphone', 1);
 
 -- --------------------------------------------------------
 
@@ -446,9 +490,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `password`, `email`, `mobile`, `added_on`) VALUES
-(1, 'Vishal Gupta', 'vishal', 'ytlearnwebdevelopment@gmail.com', '1234567890', '2020-05-13 00:00:00'),
-(2, 'Amit', 'amit', 'amir@gmail.com', '1234567890', '2020-05-14 00:00:00'),
-(3, 'Vishal', '123', 'aa@gmail.com', '9540608104', '2021-04-15 03:32:06');
+(4, 'Md. Mahidul Haque', '123456', 'mahidul5130@gmail.com', '01705568901', '2022-12-01 03:03:47'),
+(5, 'Chamak Saha', 'admin', 'chamak.saha@g.bracu.ac.bd', '8801705568901', '2022-12-13 02:34:59'),
+(6, 'Arfan Hakim', 'admin', 'arfan.hakim.swapnil@g.bracu.ac.bd', '15455454544551', '2022-12-13 02:39:40');
 
 -- --------------------------------------------------------
 
@@ -462,13 +506,6 @@ CREATE TABLE `wishlist` (
   `product_id` int(11) NOT NULL,
   `added_on` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `wishlist`
---
-
-INSERT INTO `wishlist` (`id`, `user_id`, `product_id`, `added_on`) VALUES
-(1, 1, 12, '2021-04-08 01:53:31');
 
 --
 -- Indexes for dumped tables
@@ -553,15 +590,15 @@ ALTER TABLE `product_review`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `shiprocket_token`
---
-ALTER TABLE `shiprocket_token`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `rom_master`
 --
 ALTER TABLE `rom_master`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `shiprocket_token`
+--
+ALTER TABLE `shiprocket_token`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -590,25 +627,25 @@ ALTER TABLE `wishlist`
 -- AUTO_INCREMENT for table `admin_users`
 --
 ALTER TABLE `admin_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `banner`
 --
 ALTER TABLE `banner`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `color_master`
 --
 ALTER TABLE `color_master`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `contact_us`
@@ -620,19 +657,19 @@ ALTER TABLE `contact_us`
 -- AUTO_INCREMENT for table `coupon_master`
 --
 ALTER TABLE `coupon_master`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `order_detail`
 --
 ALTER TABLE `order_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `order_status`
@@ -644,24 +681,30 @@ ALTER TABLE `order_status`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `product_attributes`
 --
 ALTER TABLE `product_attributes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `product_images`
 --
 ALTER TABLE `product_images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `product_review`
 --
 ALTER TABLE `product_review`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `rom_master`
+--
+ALTER TABLE `rom_master`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
@@ -671,28 +714,22 @@ ALTER TABLE `shiprocket_token`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `rom_master`
---
-ALTER TABLE `rom_master`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
 -- AUTO_INCREMENT for table `sub_categories`
 --
 ALTER TABLE `sub_categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `wishlist`
 --
 ALTER TABLE `wishlist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
