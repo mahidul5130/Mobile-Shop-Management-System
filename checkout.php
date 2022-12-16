@@ -123,6 +123,9 @@ if(isset($_POST['submit'])){
 		}
 	}else{	
 		sentInvoice($con,$order_id);
+		$obj=new add_to_cart();
+		$obj->emptyProduct();
+
 		?>
 		<script>
 			window.location.href='thank_you.php';
@@ -273,7 +276,7 @@ if(mysqli_num_rows($lastOrderDetailsRes)>0){
 											<div class="paymentinfo">
 												<div class="single-method">
 													COD <input type="radio" name="payment_type" value="COD" required/>
-													&nbsp;&nbsp;Instamojo <input type="radio" name="payment_type" value="instamojo" required/>
+													&nbsp;&nbsp;Card<input type="radio" name="payment_type" value="instamojo" required/>
 												</div>
 												<div class="single-method">
 												  

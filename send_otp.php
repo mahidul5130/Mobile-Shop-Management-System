@@ -22,9 +22,9 @@ if($type=='email'){
 	$mail->Port=587;
 	$mail->SMTPSecure="tls";
 	$mail->SMTPAuth=true;
-	$mail->Username="mhs.compters@gmail.com";
-	$mail->Password="eqodbbosafuztbad";
-	$mail->SetFrom("mhs.compters@gmail.com", "mhs.compters");
+	$mail->Username="shopaholic.mobile.store@gmail.com";
+	$mail->Password="lkssxmyinqeyfeni";
+	$mail->SetFrom("shopaholic.mobile.store@gmail.com", "shopaholic.mobile.store");
 	$mail->addAddress($email);
 	$mail->IsHTML(true);
 	$mail->Subject="New OTP";
